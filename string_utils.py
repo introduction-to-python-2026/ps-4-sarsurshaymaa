@@ -1,6 +1,29 @@
-def split_before_each_uppercases(formula):
-    pass # Replace the `pass` with your code
+def split_before_each_uppercase(formula):
+    if not formula:
+        return []
+
+    new_list = []
+    current = ""
+
+    for char in formula:
+        if char.isupper() and current != "":
+            new_list.append(current)
+            current = char
+        else:
+            current += char
+
+    new_list.append(current)
+    return new_list
 
 
-def split_at_first_digit(formula):
-    pass # Replace the `pass` with your code
+
+
+def split_at_digit(formula):
+    for i in range(len(formula)):
+        if formula[i].isdigit():
+            prefix = formula[:i]
+            number = int(formula[i:])
+            return prefix, number
+
+ 
+    return formula, 1
