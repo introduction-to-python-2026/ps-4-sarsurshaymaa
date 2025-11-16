@@ -3,10 +3,10 @@ def split_before_each_uppercase(formula):
         return []
 
     new_list = []
-    current = ""
+    current = formula[0]
 
-    for char in formula:
-        if char.isupper() and current != "":
+    for char in formula[1:]:
+        if char.isupper():
             new_list.append(current)
             current = char
         else:
@@ -15,15 +15,10 @@ def split_before_each_uppercase(formula):
     new_list.append(current)
     return new_list
 
-
-
-
 def split_at_digit(formula):
     for i in range(len(formula)):
         if formula[i].isdigit():
             prefix = formula[:i]
             number = int(formula[i:])
             return prefix, number
-
- 
     return formula, 1
