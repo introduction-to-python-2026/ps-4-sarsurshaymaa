@@ -1,4 +1,4 @@
-def split_before_each_uppercase(formula):
+def Test_split_before_each_uppercases(formula):
     if not formula:
         return []
 
