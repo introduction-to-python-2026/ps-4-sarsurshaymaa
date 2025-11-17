@@ -15,7 +15,7 @@ def Test_split_before_each_uppercases(formula):
     new_list.append(current)
     return new_list
 
-def split_at_digit(formula):
+def split_at_first_digit(formula):
     for i in range(len(formula)):
         if formula[i].isdigit():
             prefix = formula[:i]
