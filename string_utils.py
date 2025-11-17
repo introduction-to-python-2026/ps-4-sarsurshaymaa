@@ -1,17 +1,19 @@
 def Test_split_before_each_uppercases(formula):
-    start = o
-    end = 1
-    new_list = []
 
     if not formula:
-         return new_list 
-
-    while end < len(formula):
-        if formula[end].isupper():
-            new_list.append(formula[start:end])
-            start = end
-            end+=1 
-        new_list.append(formula[start:])
+         return [] 
+        
+    new_list = [] 
+    current = "" 
+    
+    for char in formula :
+        if char.isupper() and current != "":
+            new_list.append(current)
+            current = char
+        else:
+            current += char 
+            
+        new_list.append(current)
         return new_list
 
  
