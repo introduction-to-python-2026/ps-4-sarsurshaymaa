@@ -1,19 +1,20 @@
 def Test_split_before_each_uppercases(formula):
-    if not formula:
-        return []
-
+    start = o
+    end = 1
     new_list = []
-    current = formula[0]
 
-    for char in formula[1:]:
-        if char.isupper():
-            new_list.append(current)
-            current = char
-        else:
-            current += char
+    if not formula:
+         return new_list 
 
-    new_list.append(current)
-    return new_list
+    while end < len(formula):
+        if formula[end].isupper():
+            new_list.append(formula[start:end])
+            start = end
+            end+=1 
+        new_list.append(formula[start:])
+        return new_list
+
+ 
 
 def split_at_first_digit(formula):
     for i in range(len(formula)):
