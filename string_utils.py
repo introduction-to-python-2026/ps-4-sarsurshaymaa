@@ -1,20 +1,22 @@
-def Test_split_before_each_uppercases(formula):
+def split_before_each_uppercases(formula):
 
-    if not formula:
+    if formula == "":
          return [] 
-        
+    current=0
+    end=1  
     new_list = [] 
-    current = "" 
+  
     
-    for char in formula :
-        if char.isupper() and current != "":
-            new_list.append(current)
-            current = char
-        else:
-            current += char 
+    for char in formula [1:]:
+        if char.isupper():
+            new_list.append(formula[current:end])
+            current = end
+        end += 1
             
-        new_list.append(current)
-        return new_list
+    new_list.append(formula[current:end])
+        
+        
+    return new_list
 
  
 
